@@ -73,7 +73,7 @@ def update():
         print("Failed to load current forecast")
         hadProblem = True
     try:
-        ctemp = str(round(odata['properties']['temperature']['value']*1.8+32)) + '°'
+        ctemp = str(round(odata['properties']['temperature']['value']*1.8+32)) + 'F'
         disptemp.configure(text = ctemp)
     except:
         print("Could not update temperature")
@@ -110,13 +110,13 @@ def update():
 
     try:
         if fdata['properties']['periods'][0]['isDaytime']:
-            tmax = str(round(fdata['properties']['periods'][0]['temperature'])) + '°  '
-            tmin = str(round(fdata['properties']['periods'][1]['temperature'])) + '°  '
+            tmax = str(round(fdata['properties']['periods'][0]['temperature'])) + 'F  '
+            tmin = str(round(fdata['properties']['periods'][1]['temperature'])) + 'F  '
             dispmin.configure(text = tmin)
             dispmax.configure(text = tmax)
             tomorrowStart = 2
         else:
-            tmin = str(round(fdata['properties']['periods'][0]['temperature'])) + '°  '
+            tmin = str(round(fdata['properties']['periods'][0]['temperature'])) + 'F  '
             tmax = 'N/A'
             dispmin.configure(text = tmin)
             tomorrowStart = 1
@@ -162,20 +162,20 @@ def update():
 
     try:
         fmin = [tmin, 
-                str(round(fdata['properties']['periods'][tomorrowStart + 1]['temperature'])) + '°', 
-                str(round(fdata['properties']['periods'][tomorrowStart + 3]['temperature'])) + '°', 
-                str(round(fdata['properties']['periods'][tomorrowStart + 5]['temperature'])) + '°', 
-                str(round(fdata['properties']['periods'][tomorrowStart + 7]['temperature'])) + '°', 
-                str(round(fdata['properties']['periods'][tomorrowStart + 9]['temperature'])) + '°', 
-                str(round(fdata['properties']['periods'][tomorrowStart + 11]['temperature'])) + '°']
+                str(round(fdata['properties']['periods'][tomorrowStart + 1]['temperature'])) + 'F', 
+                str(round(fdata['properties']['periods'][tomorrowStart + 3]['temperature'])) + 'F', 
+                str(round(fdata['properties']['periods'][tomorrowStart + 5]['temperature'])) + 'F', 
+                str(round(fdata['properties']['periods'][tomorrowStart + 7]['temperature'])) + 'F', 
+                str(round(fdata['properties']['periods'][tomorrowStart + 9]['temperature'])) + 'F', 
+                str(round(fdata['properties']['periods'][tomorrowStart + 11]['temperature'])) + 'F']
 
         fmax = [tmax, 
-                str(round(fdata['properties']['periods'][tomorrowStart]['temperature'])) + '°', 
-                str(round(fdata['properties']['periods'][tomorrowStart + 2]['temperature'])) + '°', 
-                str(round(fdata['properties']['periods'][tomorrowStart + 4]['temperature'])) + '°', 
-                str(round(fdata['properties']['periods'][tomorrowStart + 6]['temperature'])) + '°', 
-                str(round(fdata['properties']['periods'][tomorrowStart + 8]['temperature'])) + '°', 
-                str(round(fdata['properties']['periods'][tomorrowStart + 10]['temperature'])) + '°']
+                str(round(fdata['properties']['periods'][tomorrowStart]['temperature'])) + 'F', 
+                str(round(fdata['properties']['periods'][tomorrowStart + 2]['temperature'])) + 'F', 
+                str(round(fdata['properties']['periods'][tomorrowStart + 4]['temperature'])) + 'F', 
+                str(round(fdata['properties']['periods'][tomorrowStart + 6]['temperature'])) + 'F', 
+                str(round(fdata['properties']['periods'][tomorrowStart + 8]['temperature'])) + 'F', 
+                str(round(fdata['properties']['periods'][tomorrowStart + 10]['temperature'])) + 'F']
                 
         ftemp0.config(text = fmax[0] + ', ' + fmin[0])
         ftemp1.config(text = fmax[1] + ', ' + fmin[1])
@@ -213,7 +213,8 @@ def update():
 
 window = tk.Tk()
 window.attributes('-fullscreen', True)
-frameMain = tk.Frame(window, background='black')
+frameMain = tk.
+rame(window, background='black')
 frameFC = tk.Frame(window, background = 'black')
 
 frameMain.columnconfigure(0, weight = 1)
