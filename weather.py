@@ -213,8 +213,7 @@ def update():
 
 window = tk.Tk()
 window.attributes('-fullscreen', True)
-frameMain = tk.
-rame(window, background='black')
+frameMain = tk.frame(window, background='black')
 frameFC = tk.Frame(window, background = 'black')
 
 frameMain.columnconfigure(0, weight = 1)
