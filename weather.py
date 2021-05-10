@@ -56,9 +56,9 @@ def dtime():
 def update():
     def getficon(index):
         if fdata['properties']['periods'][index]['icon'][35:-12].count('/') > 1:
-            return(fdata['properties']['periods'][index]['icon'][35:-12].replace('/','               ')[:-15].replace(' ', '').replace(',', '').replace('1', '').replace('2', '').replace('3', '').replace('4', '').replace('5', '').replace('6', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '') + '.png')
+            return("/icons" + fdata['properties']['periods'][index]['icon'][35:-12].replace('/','               ')[:-15].replace(' ', '').replace(',', '').replace('1', '').replace('2', '').replace('3', '').replace('4', '').replace('5', '').replace('6', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '') + '.png')
         else:
-            return(fdata['properties']['periods'][index]['icon'][35:-12].replace('/','').replace(',', '').replace('1', '').replace('2', '').replace('3', '').replace('4', '').replace('5', '').replace('6', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '') + '.png')
+            return("/icons" + fdata['properties']['periods'][index]['icon'][35:-12].replace('/','').replace(',', '').replace('1', '').replace('2', '').replace('3', '').replace('4', '').replace('5', '').replace('6', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '') + '.png')
 
     hadProblem = False
     print("Updating")
@@ -80,7 +80,7 @@ def update():
         hadProblem = True
     try:
         cwindd = odata['properties']['windDirection']['value']*1
-        windd = ImageTk.PhotoImage(Image.open('icons/arrow.png').rotate(-cwindd).resize((100, 100), Image.ANTIALIAS))
+        windd = ImageTk.PhotoImage(Image.open('/icons/arrow.png').rotate(-cwindd).resize((100, 100), Image.ANTIALIAS))
         dispcwindd.image = windd  
         dispcwindd.config(image = windd)
     except:
