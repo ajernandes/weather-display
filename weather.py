@@ -80,7 +80,7 @@ def update():
         hadProblem = True
     try:
         cwindd = odata['properties']['windDirection']['value']*1
-        windd = ImageTk.PhotoImage(Image.open('arrow.png').rotate(-cwindd).resize((100, 100), Image.ANTIALIAS))
+        windd = ImageTk.PhotoImage(Image.open('icons/arrow.png').rotate(-cwindd).resize((100, 100), Image.ANTIALIAS))
         dispcwindd.image = windd  
         dispcwindd.config(image = windd)
     except:
@@ -101,7 +101,7 @@ def update():
     try:
         cicon = odata['properties']['icon']
         cicon = (cicon[35:-12] + '.png').replace('/','')
-        ico = ImageTk.PhotoImage(Image.open(cicon).resize((200, 200), Image.ANTIALIAS))  
+        ico = ImageTk.PhotoImage(Image.open("icons/" + cicon).resize((200, 200), Image.ANTIALIAS))  
         dispcicon.image = ico
         dispcicon.configure(image = ico)
     except:
@@ -133,13 +133,13 @@ def update():
                  getficon(tomorrowStart + 8),
                  getficon(tomorrowStart + 10)]
 
-        fico0 = ImageTk.PhotoImage(Image.open(ficon[0]).resize((50, 50), Image.ANTIALIAS))
-        fico1 = ImageTk.PhotoImage(Image.open(ficon[1]).resize((50, 50), Image.ANTIALIAS))
-        fico2 = ImageTk.PhotoImage(Image.open(ficon[2]).resize((50, 50), Image.ANTIALIAS))
-        fico3 = ImageTk.PhotoImage(Image.open(ficon[3]).resize((50, 50), Image.ANTIALIAS))
-        fico4 = ImageTk.PhotoImage(Image.open(ficon[4]).resize((50, 50), Image.ANTIALIAS))
-        fico5 = ImageTk.PhotoImage(Image.open(ficon[5]).resize((50, 50), Image.ANTIALIAS))
-        fico6 = ImageTk.PhotoImage(Image.open(ficon[6]).resize((50, 50), Image.ANTIALIAS))
+        fico0 = ImageTk.PhotoImage(Image.open("icons/" + ficon[0]).resize((50, 50), Image.ANTIALIAS))
+        fico1 = ImageTk.PhotoImage(Image.open("icons/" + ficon[1]).resize((50, 50), Image.ANTIALIAS))
+        fico2 = ImageTk.PhotoImage(Image.open("icons/" + ficon[2]).resize((50, 50), Image.ANTIALIAS))
+        fico3 = ImageTk.PhotoImage(Image.open("icons/" + ficon[3]).resize((50, 50), Image.ANTIALIAS))
+        fico4 = ImageTk.PhotoImage(Image.open("icons/" + ficon[4]).resize((50, 50), Image.ANTIALIAS))
+        fico5 = ImageTk.PhotoImage(Image.open("icons/" + ficon[5]).resize((50, 50), Image.ANTIALIAS))
+        fico6 = ImageTk.PhotoImage(Image.open("icons/" + ficon[6]).resize((50, 50), Image.ANTIALIAS))
 
         ficon0.image = fico0
         ficon1.image = fico1
