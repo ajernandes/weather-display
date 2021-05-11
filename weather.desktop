@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Weather
+Exec=lxterminal -e /home/pi/weather-display/weather
