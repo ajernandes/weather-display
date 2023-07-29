@@ -9,16 +9,9 @@ from tkinter.ttk import *
 import tkinter.font as font
 
 
-
-
-#Spotsylvania
-lat = 38.1979
-long = -77.5878
-
-
 #Purdue
-#lat = 40.4237
-#long = -86.9212
+lat = 40.4237
+long = -86.9212
 
 
 try:
